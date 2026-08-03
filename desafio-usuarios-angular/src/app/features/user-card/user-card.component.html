@@ -1,0 +1,8 @@
+<div class="card">
+  <mat-icon class="avatar">account_circle</mat-icon>
+  <span class="nome">{{ usuario.nome }}</span>
+  <span class="email">{{ usuario.email }}</span>
+  <button mat-icon-button (click)="editar.emit(usuario)" aria-label="editar usuário">
+    <mat-icon>edit</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,7 @@
+<input [formControl]="termoControl" placeholder="Buscar..." />
+
+<p *ngIf="loading$ | async">carregando...</p>
+
+<ul>
+  <li *ngFor="let item of resultados$ | async">{{ item.nome }}</li>
+</ul>

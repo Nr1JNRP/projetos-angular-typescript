@@ -1,0 +1,26 @@
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 360px;
+}
+
+.linha {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.linha mat-form-field {
+  flex: 1;
+}
+
+.tipo-telefone {
+  flex: 0 0 110px;
+}
+
+.aviso {
+  color: #1976d2;
+  font-size: 13px;
+  margin-top: -8px;
+}

@@ -1,0 +1,15 @@
+<nav>
+  @for (link of links; track link.path) {
+    <a
+      [routerLink]="link.path"
+      routerLinkActive="ativo"
+      [routerLinkActiveOptions]="{ exact: link.path === '/' }"
+    >
+      {{ link.label }}
+    </a>
+  }
+</nav>
+
+<main>
+  <router-outlet />
+</main>

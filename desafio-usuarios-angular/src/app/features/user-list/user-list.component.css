@@ -1,0 +1,53 @@
+.titulo {
+  margin-left: 12px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.busca {
+  margin-left: auto;
+  width: 280px;
+  background: white;
+  border-radius: 4px;
+}
+
+main {
+  max-width: 900px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+h3 {
+  color: #666;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.lista {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.estado {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 24px;
+  color: #666;
+}
+
+.estado.erro {
+  justify-content: space-between;
+  background: #fdecea;
+  color: #c62828;
+  border-radius: 8px;
+}
+
+.fab-novo {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+}

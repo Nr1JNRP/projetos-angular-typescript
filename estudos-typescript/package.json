@@ -1,0 +1,23 @@
+{
+  "name": "estudos-typescript",
+  "version": "1.0.0",
+  "description": "Uns exercícios de refatoração em TS pra treinar",
+  "scripts": {
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
+    "ex01": "ts-node src/exercicio-01-refatoracao/depois.ts",
+    "ex02": "ts-node src/exercicio-02-generics-paginacao/index.ts"
+  },
+  "devDependencies": {
+    "@angular/common": "^18.2.14",
+    "@angular/core": "^18.2.14",
+    "@angular/forms": "^18.2.14",
+    "@ngrx/effects": "^18.1.1",
+    "@ngrx/store": "^18.1.1",
+    "@types/node": "^20.14.0",
+    "rxjs": "^7.8.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4",
+    "zone.js": "^0.14.10"
+  }
+}

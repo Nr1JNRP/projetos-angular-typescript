@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-icon>menu</mat-icon>
+  <span class="titulo">USUÁRIOS</span>
+  <mat-form-field appearance="outline" class="busca" subscriptSizing="dynamic">
+    <mat-icon matPrefix>search</mat-icon>
+    <input matInput placeholder="Pesquisar..." [formControl]="busca" />
+  </mat-form-field>
+</mat-toolbar>
+
+<main>
+  <h3>Usuários cadastrados</h3>
+
+  @if (loading()) {
+    <div class="estado">
+      <mat-spinner diameter="32" />
+      <span>carregando...</span>
+    </div>
+  } @else if (error()) {
+    <div class="estado erro">
+      <span>{{ error() }}</span>
+      <button mat-button color="primary" (click)="tentarNovamente()">tentar novamente</button>
+    </div>
+  } @else if (usuarios().length === 0) {
+    <div class="estado">nenhum usuário encontrado</div>
+  } @else {
+    <div class="lista">
+      @for (usuario of usuarios(); track usuario.id) {
+        <app-user-card [usuario]="usuario" (editar)="abrirEdicaoUsuario($event)" />
+      }
+    </div>
+  }
+</main>
+
+<button mat-fab color="warn" class="fab-novo" (click)="abrirNovoUsuario()" aria-label="adicionar novo usuário">
+  <mat-icon>add</mat-icon>
+</button>

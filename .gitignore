@@ -1,0 +1,14 @@
+# Node
+**/node_modules/
+
+# build output
+**/dist/
+**/out-tsc/
+**/.angular/
+
+# testes
+**/coverage/
+
+# logs
+*.log
+npm-debug.log*

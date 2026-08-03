@@ -1,0 +1,74 @@
+<h2 mat-dialog-title>{{ modoEdicao ? 'Editar usuário' : 'Adicionar novo usuário' }}</h2>
+
+<form [formGroup]="form" (ngSubmit)="salvar()">
+  <mat-dialog-content class="conteudo">
+    <mat-form-field appearance="outline">
+      <mat-label>Usuário (e-mail) *</mat-label>
+      <input matInput formControlName="email" type="email" />
+      @if (form.controls.email.invalid && form.controls.email.touched) {
+        <mat-error>
+          @if (form.controls.email.hasError('required')) {
+            e-mail é obrigatório
+          } @else if (form.controls.email.hasError('email')) {
+            informe um e-mail válido
+          }
+        </mat-error>
+      }
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nome completo *</mat-label>
+      <input matInput formControlName="nome" />
+      @if (form.controls.nome.invalid && form.controls.nome.touched) {
+        <mat-error>nome é obrigatório</mat-error>
+      }
+    </mat-form-field>
+
+    <div class="linha">
+      <mat-form-field appearance="outline">
+        <mat-label>CPF *</mat-label>
+        <input matInput formControlName="cpf" placeholder="000.000.000-00" />
+        @if (form.controls.cpf.invalid && form.controls.cpf.touched) {
+          <mat-error>
+            @if (form.controls.cpf.hasError('required')) {
+              CPF é obrigatório
+            } @else if (form.controls.cpf.hasError('cpfInvalido')) {
+              CPF inválido
+            }
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Número do telefone *</mat-label>
+        <input matInput formControlName="telefone" placeholder="(00) 00000-0000" />
+        @if (form.controls.telefone.invalid && form.controls.telefone.touched) {
+          <mat-error>
+            @if (form.controls.telefone.hasError('required')) {
+              telefone é obrigatório
+            } @else if (form.controls.telefone.hasError('telefoneInvalido')) {
+              número de dígitos inválido pro tipo escolhido
+            }
+          </mat-error>
+        }
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="tipo-telefone">
+        <mat-label>Tipo</mat-label>
+        <mat-select formControlName="tipoTelefone">
+          <mat-option value="CELULAR">Celular</mat-option>
+          <mat-option value="FIXO">Fixo</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <p class="aviso">O usuário recebe uma senha provisória para acesso ao sistema por SMS.</p>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="cancelar()">Cancelar</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">
+      Salvar
+    </button>
+  </mat-dialog-actions>
+</form>
